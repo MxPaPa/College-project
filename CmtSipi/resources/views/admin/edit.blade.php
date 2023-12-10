@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title')
-    <title>Add New Teacher And List All Teacher</title>
+    <title>Update Teacher Profile</title>
 @endsection
 @section('content')
 <div class="content-wrapper">
@@ -15,7 +15,7 @@
         </div>
         @endif
     <div class="container-xxl flex-grow-1 container-p-y">
-      <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages/</span>Add New Teacher</h4>
+      <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages/</span>Update Teacher Profile</h4>
 
       <!-- Basic Layout & Basic with Icons -->
       <div class="row">
@@ -23,16 +23,17 @@
         <div class="col-xxl">
           <div class="card mb-4">
             <div class="card-header d-flex align-items-center justify-content-between">
-              <h5 class="mb-0">Add New</h5>
-              <small class="text-muted float-end">addnewteacher</small>
+              <h5 class="mb-0">Update</h5>
+              <small class="text-muted float-end">Update</small>
             </div>
             <div class="card-body">
-              <form  action="{{ route('addnew') }}" method="post" enctype="multipart/form-data">
-                @csrf
+                <form action="{{ route('update')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="teacher_id" value="{{$teacher->id}}" >
                 <div class="row mb-3">
                   <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}" placeholder="Enter Name" />
+                    <input type="text" class="form-control" id="name" name="name" value="{{ $teacher->name }}" required placeholder="Enter Name" />
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -42,7 +43,7 @@
                       type="text"
                       class="form-control"
                       id="department" name="department"
-                      placeholder="Enter Depertment" value="{{old('department')}}"
+                      placeholder="Enter Depertment" value="{{ $teacher->department }}" required
                     />
                   </div>
                 </div>
@@ -53,7 +54,7 @@
                       type="text"
                       class="form-control"
                       id="instructor" name="instructor"
-                      placeholder="Instructor" value="{{old('instructor')}}"
+                      placeholder="Instructor" value="{{ $teacher->instructor }}" required
                     />
                   </div>
                 </div>
@@ -67,7 +68,7 @@
                         name="email"
                         class="form-control"
                         placeholder="example@gmail.com"
-                        value="{{old('email')}}"
+                        value="{{ $teacher->email }}" required
                         aria-describedby="basic-default-email2"
                       />
                       <span class="input-group-text" id="basic-default-email2">@example.com</span>
@@ -83,7 +84,7 @@
                       id="basic-default-phone"
                       class="form-control phone-mask"
                       placeholder="+880" name="phone" id="phone"
-                      value="{{old('phone')}}"
+                      value="{{ $teacher->phone }}" required
                       aria-describedby="basic-default-phone"
                     />
                   </div>
@@ -96,7 +97,7 @@
                 </div>
                 <div class="row justify-content-end">
                   <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Add New</button>
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
                   </div>
                 </div>
               </form>

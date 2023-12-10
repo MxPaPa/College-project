@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('department');
-            $table->string('email');
+            $table->string('instructor');
+            $table->string('email')->unique();
             $table->integer('phone');
             $table->string('image');
 

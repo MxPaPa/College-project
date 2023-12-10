@@ -19,14 +19,22 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/about', [HomeController::class, 'AboutUs']);
-Route::get('/cont', [HomeController::class, 'contactus']);
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/about', 'AboutUs');
+    Route::get('/cont', 'contactus');
+});
 
 //Teacher
 Route::get('/admin/dashboard', [TeacherController::class, 'index'])->name('dashboard');
 Route::get('/admin/allteacherinfo', [TeacherController::class, 'allteacherifno'])->name('info');
-Route::get('/admin/addnewteacher', [TeacherController::class, 'addnewteacer'])->name('addnew');
+Route::post('/admin/addnewteacher', [TeacherController::class, 'addnewteacer'])->name('addnew');
+Route::get('/admin/add',[TeacherController::class, 'showform'])->name('show');
+Route::get('admin/edit/{id}', [TeacherController::class, 'edit'])->name('teachersedit');
+Route::post('/admin/update-profile', [TeacherController::class, 'update'])->name('update');
+Route::get('/admin/destory/{id}', [TeacherController::class, 'destroy'])->name('deleteprofile');
+
+
 //controller Students
 
 

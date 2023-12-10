@@ -21,6 +21,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{asset("assets/img/favicon/favicon.ico")}}" />
 
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -60,7 +61,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+            <a href="{{route('dashboard')}}" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg
                   width="25"
@@ -116,7 +117,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">CMT-SIPI</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -148,7 +149,7 @@
                 </a>
               </li>
             <li class="menu-item">
-                <a href="{{route("addnew")}}" class="menu-link">
+                <a href="{{route('show')}}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-home-circle"></i>
                   <div data-i18n="Analytics">Add New Teacher</div>
                 </a>
