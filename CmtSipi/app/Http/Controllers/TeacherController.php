@@ -26,7 +26,7 @@ class TeacherController extends Controller
             'department' => 'required',
             'instructor' => 'required',
             'email' => 'required|email',
-            'phone' => 'required',
+            'phone' => 'required|numeric',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ],[
         'image.required' => 'The image field is required.',
