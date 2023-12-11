@@ -83,15 +83,17 @@
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
-              <div class="ftco-footer-widget mb-5">
-                  <h2 class="ftco-heading-2">Subscribe Us!</h2>
-                <form action="#" class="subscribe-form">
-                  <div class="form-group">
-                    <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
-                    <input type="submit" value="Subscribe" class="form-control submit px-3">
-                  </div>
-                </form>
-              </div>
+                <div class="ftco-footer-widget mb-5">
+                    <h2 class="ftco-heading-2">Subscribe Us!</h2>
+                  <form action="{{url ('/subscribe') }}" method="POST" class="subscribe-form">
+                      @csrf
+                    <div class="form-group">
+                      <input type="text" class="form-control mb-2 text-center" placeholder="Enter name" name="name" >
+                      <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address" name="email"  value="{{old('email')}}" required>
+                      <input type="submit" value="subscribe" class="form-control submit px-3">
+                    </div>
+                  </form>
+                </div>
 
               </div>
               <div class="col-md-6 col-lg-3">

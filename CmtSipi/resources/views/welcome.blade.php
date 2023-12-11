@@ -225,6 +225,7 @@
           <p>Our institution provides 11 courses. Among them, our computer department has 2 courses. <br> They are...</p>
         </div>
       </div>
+            <div class="d-flex justify-content-center"
               <div class="row">
                   <div class="col-md-5 course ftco-animate">
                       <div class="img" style="background-image: url(images/CE.jpg);"></div>
@@ -236,7 +237,7 @@
                           </p>
                           <h3><a href="#">Diploma In Computer Engineering</a></h3>
                           <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
-                          <p><a href="#" class="btn btn-primary">Apply now</a></p>
+                          <p><a href="#" class="btn btn-primary">Read More</a></p>
                       </div>
                   </div>
                   <div class="col-md-5 course ftco-animate">
@@ -249,11 +250,12 @@
                           </p>
                           <h3><a href="#">Graphic design</a></h3>
                           <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
-                          <p><a href="#" class="btn btn-primary">Apply now</a></p>
+                          <p><a href="#" class="btn btn-primary">Read More</a></p>
                       </div>
                   </div>
                   </div>
               </div>
+            </div>
           </div>
       </section>
 
@@ -349,7 +351,7 @@
               </div>
           </div>
       </section>
-
+{{-- mmm --}}
 
   <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url(images/bg_5.jpg);" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
@@ -359,15 +361,18 @@
                   <div class="py-md-5">
                 <div class="heading-section heading-section-white ftco-animate mb-5">
                   <h2 class="mb-4">Request A Quote</h2>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  <p>You are need admission in any kind of course then you can apply from below. We will inform you all the information. <br> you</p>
                 </div>
-                <form action="#" class="appointment-form ftco-animate">
+
+
+                    <form action="{{url ('/requestquote') }}" method="POST" class="appointment-form ftco-animate">
+                        @csrf
                           <div class="d-md-flex">
                               <div class="form-group">
-                                  <input type="text" class="form-control" placeholder="First Name">
+                                  <input type="text" class="form-control" placeholder="First Name" name="first_name">
                               </div>
                               <div class="form-group ml-md-4">
-                                  <input type="text" class="form-control" placeholder="Last Name">
+                                  <input type="text" class="form-control" placeholder="Last Name" name="last_name">
                               </div>
                           </div>
                           <div class="d-md-flex">
@@ -375,25 +380,22 @@
                                   <div class="form-field">
                                   <div class="select-wrap">
                           <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                          <select name="" id="" class="form-control">
-                              <option value="">Select Your Course</option>
-                            <option value="">Art Lesson</option>
-                            <option value="">Language Lesson</option>
-                            <option value="">Music Lesson</option>
-                            <option value="">Sports</option>
-                            <option value="">Other Services</option>
+                          <select  class="form-control" required name="course_name">
+                              <option value="" style="color: rgb(0, 255, 64);">Select Your Course</option>
+                              <option value="" style="color: rgb(0, 0, 0);">Art Lesson</option>
+                              <option value="" style="color: rgb(0, 0, 0);" >Language Lesson</option>
+                              <option value="" style="color: rgb(0, 0, 0);">Music Lesson</option>
+                              <option value="" style="color: rgb(0, 0, 0);">Sports</option>
+                              <option value="" style="color: rgb(0, 0, 0);">Other Services</option>
                           </select>
                         </div>
                         </div>
                               </div>
                               <div class="form-group ml-md-4">
-                                  <input type="text" class="form-control" placeholder="Phone">
+                                  <input type="text" class="form-control" placeholder="Phone" required name="phone">
                               </div>
                           </div>
                           <div class="d-md-flex">
-                              <div class="form-group">
-                        <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
-                      </div>
                       <div class="form-group ml-md-4">
                         <input type="submit" value="Request A Quote" class="btn btn-primary py-3 px-4">
                       </div>

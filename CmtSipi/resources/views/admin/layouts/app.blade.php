@@ -154,9 +154,6 @@
                   <div data-i18n="Analytics">Add New Teacher</div>
                 </a>
               </li>
-
-            <!-- student -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Student</span></li>
             <li class="menu-item">
                 <a href="{{route('studentinfo')}}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-home-circle"></i>
