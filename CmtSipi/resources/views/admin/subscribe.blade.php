@@ -25,8 +25,8 @@
           <table class="table">
             <thead>
               <tr>
-                <th>name</th>
-                <th>Email</th>
+                <th style="text-align: center">Name</th>
+                <th style="text-align: center">Email</th>
 
                 <th>Actions</th>
               </tr>
@@ -39,16 +39,6 @@
                 <td>
                     <a href="{{url('deletesubscribe', $v_subscribe->email)}}" class="btn btn-danger">Delete</a>
                 </td>
-
-
-                {{-- @foreach ($subscribs as $subscrib)
-                <td>{{$subscrib->name}}</td>
-                <td>{{$subscrib->email}}</td>
-                <td>
-                    <a href="{{route('teachersedit', $teacher->id)}}" class="btn btn-primary">Edit</a>
-                    <a href="{{route('deleteprofile', $teacher->id)}}" class="btn btn-danger">Delete</a>
-                </td>
-                @endforeach --}}
               <tr>
 
               </tr>

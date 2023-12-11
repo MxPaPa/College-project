@@ -126,8 +126,8 @@
               />
             </div>
         </div>
-        <div class="mb-3 col-md-6">
 
+        <div class="mb-3 col-md-6">
             <label for="gender" class="form-label">Gender:</label>
             <select  class="form-select" name="gender" id="gender" aria-label="Default select example">
               <option selected>select Gender</option>

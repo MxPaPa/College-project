@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB as FacadesDB;
 use Illuminate\support\Facades\Redirect;
 use Session;
 
@@ -29,7 +30,7 @@ class HomeController extends Controller
             'name' => 'required',
             'email' => 'required|email',
     ]);
-        DB::table('subscribe')->insert([
+    FacadesDB::table('subscribe')->insert([
             'name' => $request->name,
             'email' => $request->email,
         ]);
@@ -45,7 +46,7 @@ class HomeController extends Controller
 
     ]);
 
-        DB::table('requestquote')->insert([
+    FacadesDB::table('requestquote')->insert([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'course_name' => $request->course_name,
@@ -81,7 +82,7 @@ class HomeController extends Controller
 
     ]);
 
-        DB::table('requestquote')->insert([
+        FacadesDB::table('requestquote')->insert([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'course_name' => $request->course_name,

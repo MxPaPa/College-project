@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use DB;
 use App\Http\Requests;
+use Illuminate\Contracts\Session\Session as SessionSession;
+use Illuminate\Support\Facades\DB as FacadesDB;
 use Illuminate\support\Facades\Redirect;
+use Illuminate\Support\Facades\Session as FacadesSession;
 use Session;
 
 Session_start();
@@ -108,7 +111,7 @@ class TeacherController extends Controller
     // SUBSCRIPE***MXB**
     public function allsubscribe()
     {
-        $all_subscribe_info=DB::table('subscribe')->get();
+        $all_subscribe_info=FacadesDB::table('subscribe')->get();
         $manage_subscribe=view('admin.subscribe')
             ->with('all_subscribe_info',$all_subscribe_info);
         return view('admin.layouts.app')
@@ -117,10 +120,10 @@ class TeacherController extends Controller
 
     public function subscribedestroy($email)
     {
-        DB::table('subscribe')
+        FacadesDB::table('subscribe')
             ->where('email',$email)
             ->delete();
-            Session::put('message','Subscribe Deleted Successfully!');
+            FacadesSession::put('message','Subscribe Deleted Successfully!');
         return Redirect::to('subscribe');
     }
 
