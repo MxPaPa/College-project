@@ -24,6 +24,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/about', 'AboutUs');
     Route::get('/cont', 'contactus');
     Route::post('/subscribe', 'addsubscribe');
+    Route::post('/requestquote', 'addrequestquote');
 });
 
 //Teacher
@@ -38,6 +39,8 @@ Route::get('/admin/destory/{id}', [TeacherController::class, 'destroy'])->name('
 // ***Subscribe**
 Route::get('/subscribe', [TeacherController::class, 'allsubscribe']);
 Route::get('/deletesubscribe/{email}', [TeacherController::class, 'subscribedestroy']);
+
+// ***Request A Quote***
 
 
 //controller Students
