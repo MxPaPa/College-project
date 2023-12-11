@@ -140,13 +140,13 @@
             </li>
             <li class="menu-item">
                 <a href="{{route('info')}}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                  <div data-i18n="Analytics">All Teacher Information</div>
+                    <i class=' menu-icon tf-icons bx bxs-user-detail'> </i>
+                  <div data-i18n="Analytics"> All Teacher Information</div>
                 </a>
               </li>
             <li class="menu-item">
                 <a href="{{route('show')}}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                  <i class="menu-icon tf-icons bx bx-user-pin"></i>
                   <div data-i18n="Analytics">Add New Teacher</div>
                 </a>
               </li>
@@ -156,13 +156,13 @@
               </li>
             <li class="menu-item">
                 <a href="{{route('studentinfo')}}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                  <i class="menu-icon tf-icons bx bxs-user-detail"></i>
                   <div data-i18n="Analytics">All Students Information</div>
                 </a>
               </li>
             <li class="menu-item">
                 <a href="{{route('student.form')}}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                  <i class="menu-icon tf-icons bx bx-user-circle"></i>
                   <div data-i18n="Analytics">Add New Student</div>
                 </a>
               </li>
@@ -173,7 +173,7 @@
             <!-- suscriber-->
             <li class="menu-item">
                 <a href="{{url('subscribe')}}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                  <i class="menu-icon tf-icons bx bx-user-check"></i>
                   <div data-i18n="Analytics">All Subscriber</div>
                 </a>
               </li>
