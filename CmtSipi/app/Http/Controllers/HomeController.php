@@ -37,18 +37,33 @@ class HomeController extends Controller
     }
 
     public function addrequestquote(Request $request){
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'course_name' => 'required',
+            'phone' => 'required',
 
-        $data=array();
-        $data['id']=$request->id;
-        $data['first_name']=$request->first_name;
-        $data['last_name']=$request->last_name;
-        $data['course_name']=$request->course_name;
-        $data['phone']=$request->phone;
+    ]);
+
+        DB::table('requestquote')->insert([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'course_name' => $request->course_name,
+            'phone' => $request->phone,
+        ]);
+        return Redirect::to('/');
+
+        // $data=array();
+        // $data['id']=$request->id;
+        // $data['first_name']=$request->first_name;
+        // $data['last_name']=$request->last_name;
+        // $data['course_name']=$request->course_name;
+        // $data['phone']=$request->phone;
 
 
-        echo"<pre>";
-        print_r($data);
-        echo"</pre>";
+        // echo"<pre>";
+        // print_r($data);
+        // echo"</pre>";
 
         // DB::table('requestquot')->insert($data);
         // Session::put('message','Requestquot Added Successfully!!');
@@ -58,26 +73,21 @@ class HomeController extends Controller
 
 
 
-    //     $request->validate([
-    //         'first_name' => 'required',
-    //         'last_name' => 'required',
-    //         'course_name' => 'required',
-    //         'phone' => 'required',
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'course_name' => 'required',
+            'phone' => 'required',
 
-    // ]);
+    ]);
 
-    //      echo"<pre>";
-    //      print_r($request);
-    //      echo"</pre>";
-
-
-        // DB::table('requestquote')->insert([
-        //     'first_name' => $request->first_name,
-        //     'last_name' => $request->last_name,
-        //     'course_name' => $request->course_name,
-        //     'phone' => $request->phone,
-        // ]);
-        // return Redirect::to('/');
+        DB::table('requestquote')->insert([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'course_name' => $request->course_name,
+            'phone' => $request->phone,
+        ]);
+        return Redirect::to('/');
     }
 
 }

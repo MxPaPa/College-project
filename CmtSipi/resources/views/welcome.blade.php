@@ -380,7 +380,7 @@
                                   <div class="form-field">
                                   <div class="select-wrap">
                           <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                          <select name="course_name" class="form-control" required >
+                          <select  class="form-control" required name="course_name">
                               <option value="" style="color: rgb(0, 255, 64);">Select Your Course</option>
                               <option value="" style="color: rgb(0, 0, 0);">Art Lesson</option>
                               <option value="" style="color: rgb(0, 0, 0);" >Language Lesson</option>
