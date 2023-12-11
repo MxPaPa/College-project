@@ -19,7 +19,6 @@
             </ul>
         </div>
         @endif
-
     <div class="container-xxl flex-grow-1 container-p-y">
       <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages /</span>Teachers Information</h4>
 
@@ -41,6 +40,7 @@
             </thead>
             <tbody class="table-border-bottom-0">
                 @foreach ($teachers as $teacher)
+                <tr>
                 <td>{{$teacher->id}}</td>
                 <td>{{$teacher->name}}</td>
                 <td>{{$teacher->department}}</td>
@@ -51,8 +51,9 @@
                     <a href="{{route('teachersedit', $teacher->id)}}" class="btn btn-primary">Edit</a>
                     <a href="{{route('deleteprofile', $teacher->id)}}" class="btn btn-danger">Delete</a>
                 </td>
+                </tr>
                 @endforeach
-              <tr>
+
 
               </tr>
             </tbody>

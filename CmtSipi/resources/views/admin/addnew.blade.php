@@ -91,8 +91,11 @@
                     <label class="col-sm-2 col-form-label mt-5" for="basic-default-email">Image</label>
                     <div class="col-sm-10">
                     <label for="formFile" class="form-label mt-2">Image</label>
-                    <input class="form-control" type="file" name="image" id="image" />
+                    <input class="form-control" type="file" name="image" id="image" required />
                   </div>
+                  @error('image')
+                  <div class="text-danger">{{ $message }}</div>
+              @enderror
                 </div>
                 <div class="row justify-content-end">
                   <div class="col-sm-10">

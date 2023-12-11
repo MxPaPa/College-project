@@ -20,9 +20,11 @@ class TeacherController extends Controller
             'department' => 'required',
             'instructor' => 'required',
             'email' => 'required|email',
-            'phone' => 'required|max:11',
+            'phone' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
+        ],[
+        'image.required' => 'The image field is required.',
+    ]);
 
         //  image upload
         if ($request->hasFile('image')) {
@@ -58,8 +60,10 @@ class TeacherController extends Controller
             'department' => 'required',
             'instructor' => 'required',
             'email' => 'required|email',
-            'phone' => 'required|max:11',
+            'phone' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ],[
+            'image.required' => 'The image field is required.',
         ]);
 
         $imagePath = null;
