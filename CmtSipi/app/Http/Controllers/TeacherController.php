@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use DB;
+use App\Http\Requests;
+use Illuminate\support\Facades\Redirect;
+use Session;
+
+Session_start();
 
 class TeacherController extends Controller
 {
@@ -98,5 +104,25 @@ class TeacherController extends Controller
         Teacher::find($id)->delete();
         return redirect()->route('info')->with('message', 'Teacher Profile Deleted Successfully!');
     }
+
+    // SUBSCRIPE***MXB**
+    public function allsubscribe()
+    {
+        $all_subscribe_info=DB::table('subscribe')->get();
+        $manage_subscribe=view('admin.subscribe')
+            ->with('all_subscribe_info',$all_subscribe_info);
+        return view('admin.layouts.app')
+            ->with('admin.subscribe',$manage_subscribe);
+    }
+
+    public function subscribedestroy($email)
+    {
+        DB::table('subscribe')
+            ->where('email',$email)
+            ->delete();
+            Session::put('message','Subscribe Deleted Successfully!');
+        return Redirect::to('subscribe');
+    }
+
 
 }

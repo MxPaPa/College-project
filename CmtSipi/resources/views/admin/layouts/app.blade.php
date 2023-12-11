@@ -155,6 +155,13 @@
                 </a>
               </li>
 
+              <li class="menu-item">
+                <a href="{{url('subscribe')}}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                  <div data-i18n="Analytics">All Subscriber</div>
+                </a>
+              </li>
+
             <!-- Components -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
             <!-- Cards -->

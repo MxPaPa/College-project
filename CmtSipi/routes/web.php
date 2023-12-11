@@ -23,6 +23,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/about', 'AboutUs');
     Route::get('/cont', 'contactus');
+    Route::post('/subscribe', 'addsubscribe');
 });
 
 //Teacher
@@ -33,6 +34,10 @@ Route::get('/admin/add',[TeacherController::class, 'showform'])->name('show');
 Route::get('admin/edit/{id}', [TeacherController::class, 'edit'])->name('teachersedit');
 Route::post('/admin/update-profile', [TeacherController::class, 'update'])->name('update');
 Route::get('/admin/destory/{id}', [TeacherController::class, 'destroy'])->name('deleteprofile');
+
+// ***Subscribe**
+Route::get('/subscribe', [TeacherController::class, 'allsubscribe']);
+Route::get('/deletesubscribe/{email}', [TeacherController::class, 'subscribedestroy']);
 
 
 //controller Students
